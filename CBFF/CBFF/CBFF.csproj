@@ -103,7 +103,6 @@
     <Compile Include="Internals\AST\Base\ParserEngine\Parsers\WhiteSpaceTerminal.cs" />
     <Compile Include="Internals\AST\Base\ParserEngine\ParserWriter.cs" />
     <Compile Include="Internals\AST\Base\ParserEngine\ParserWriterArgs.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Properties\AssemblyInfo.cs" />
     <Compile Include="Internals\AST\Base\ParserEngine\Scanner.cs" />
     <Compile Include="Internals\AST\Base\ParserEngine\Scanners\StringScanner.cs" />
     <Compile Include="Internals\AST\Base\ParserEngine\SlimStack.cs" />
@@ -137,6 +136,7 @@
     <Compile Include="Internals\AST\Base\ParserEngine\Writers\Display\RepeatWriter.cs" />
     <Compile Include="Internals\AST\Base\ParserEngine\Writers\Display\UnaryWriter.cs" />
     <Compile Include="Internals\AST\Node.cs" />
+    <Compile Include="Internals\CBFFGrammar.cs" />
     <Compile Include="Internals\PatternParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

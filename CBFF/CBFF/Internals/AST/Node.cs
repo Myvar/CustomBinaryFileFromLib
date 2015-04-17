@@ -8,7 +8,7 @@ namespace CBFF.Internals.AST
 {
     public class Node : Base.iAst
     {
-        public List<Node> Nodes { get; set; }
+        public List<Base.iAst> Nodes { get; set; }
         public List<Attribute> Attributes { get; set; }
     }
 }
