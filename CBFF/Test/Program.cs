@@ -13,10 +13,11 @@ namespace Test
         {
 
 
-            var str = "file{	header	{		filevertion:string;		filename:string;			}	data	[		x:int;		y:int;		c:color;	]}color {	a:byte;	r:byte;	g:byte;	b:byte;}";
-           
-            var Wr = new CustomeBinaryFileWriter(str);
+            var str = "file{header{id:string;}data:string;}";
 
+            var Wr = new CustomeBinaryFileWriter(str);
+            Wr.SetValue("file.data", "tets data");
+            Wr.SetValue("file.header.id", "testfileid");
 
             Wr.WriteFile("test.bin");
         }

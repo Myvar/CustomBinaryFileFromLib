@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CBFF.Internals.AST
 {
-    public class Node : Base.iAst
+    public class Node : Base.IAst
     {
-        public List<Base.iAst> Nodes { get; set; }
+        public List<Base.IAst> Nodes { get; set; }
         public List<Attribute> Attributes { get; set; }
     }
 }

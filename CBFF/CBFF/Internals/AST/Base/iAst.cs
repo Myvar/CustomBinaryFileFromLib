@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CBFF.Internals.AST.Base
 {
-    public abstract class iAst
+    public abstract class IAst
     {
         public string Name { get; set; }
     }

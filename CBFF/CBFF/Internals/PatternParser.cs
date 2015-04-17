@@ -11,9 +11,9 @@ namespace CBFF.Internals
 {
     public static class PatternParser
     {
-        public static List<iAst> ParsePattern(string pat)
+        public static List<IAst> ParsePattern(string pat)
         {
-            var ret = new List<iAst>();
+            var ret = new List<IAst>();
 
             var g = new CBFF.Internals.CBFFGrammar();
             var match = g.Match(pat.Replace("/r/n"," ").Replace("/n"," ").Replace("\t"," "));
@@ -31,7 +31,12 @@ namespace CBFF.Internals
                     var e = new List<ArrayNode>();
                     foreach (var i in r)
                     {
-                        e.Add(new ArrayNode() { Attributes = i.Attributes, Name = i.Name, Nodes = i.Nodes });
+                        var add = new ArrayNode() { Attributes = i.Attributes, Name = i.Name, Nodes = i.Nodes };
+                        foreach (var ii in add.Attributes)
+                        {
+                            add.Values.Add(ii.Name, new List<object>());
+                        }
+                        e.Add(add);
                     }
                     ret.Add(e[0]);
                 }
@@ -48,7 +53,7 @@ namespace CBFF.Internals
 
             
                 var node = new Node();
-                node.Nodes = new List<iAst>();
+                node.Nodes = new List<IAst>();
                 node.Attributes = new List<Attribute>();
                // node.Name = m.Matches["NodeName"].StringValue;
                 foreach(var mm in m)
@@ -64,7 +69,12 @@ namespace CBFF.Internals
                         var e = new List<ArrayNode>();
                         foreach(var i in r)
                         {
-                            e.Add(new ArrayNode() {Attributes = i.Attributes , Name = i.Name , Nodes = i.Nodes });
+                            var add = new ArrayNode() { Attributes = i.Attributes, Name = i.Name, Nodes = i.Nodes };
+                            foreach (var ii in add.Attributes)
+                            {
+                                add.Values.Add(ii.Name, new List<object>());
+                            }
+                            e.Add(add);
                         }
                         node.Nodes.AddRange(e);
                     }
