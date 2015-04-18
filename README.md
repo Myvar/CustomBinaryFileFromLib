@@ -10,6 +10,7 @@ Custom Binary File From Lib (cbff) Is a library that allow you to easily create 
 # Demo
 here is a demo on how to use it (C#):
 ```
+using CBFF;
 // the paterns tell us the structure and layout of the file you can create your own
 var FilePattern = @"
   file
