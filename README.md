@@ -1,5 +1,5 @@
 # CustomBinaryFileFromLib
-Custom Binary File From Lib (cbff) Is a library that allow you to easily create custom binary file formats
+Custom Binary File From Lib (cbff) Is a library that allow you to easily create custom binary file formats in C# (or any .net laguage)
 
 # RoadMap
 - Add suport for array file structures
