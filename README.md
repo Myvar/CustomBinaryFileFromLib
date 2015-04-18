@@ -1,6 +1,7 @@
 # CustomBinaryFileFromLib
 Custom Binary File From Lib (cbff) Is a library that allow you to easily create custom binary file formats in C# (or any .net laguage)
 
+This package is available on NuGet Gallery.
 To install Custom Binary File From Lib (cbff), run the following command in the Package Manager Console
 
 ```
