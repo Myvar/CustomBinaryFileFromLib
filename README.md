@@ -11,7 +11,7 @@ PM> Install-Package CustomBinaryFileFromLib
 # RoadMap
 - Add suport for array file structures
 - Add suport for sturcture type linking
-- Create documnetaion
+- Create  documentation
 
 # Demo
 here is a demo on how to use it (C#):
