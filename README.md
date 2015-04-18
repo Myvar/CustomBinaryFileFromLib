@@ -8,7 +8,7 @@ Custom Binary File From Lib (cbff) Is a library that allow you to easily create 
 - Add to NuGet
 
 # Demo
-here is a demo on how to use it:
+here is a demo on how to use it (C#):
 ```
 // the paterns tell us the structure and layout of the file you can create your own
 var FilePattern = @"
