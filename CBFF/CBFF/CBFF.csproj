@@ -11,6 +11,8 @@
     <AssemblyName>CBFF</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,106 +46,113 @@
     <Compile Include="Internals\AST\ArrayNode.cs" />
     <Compile Include="Internals\AST\Attribute.cs" />
     <Compile Include="Internals\AST\Base\iAst.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\FluentExtensions.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Grammar.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\GrammarMatch.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Grammars\BnfGrammar.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Grammars\EbnfGrammar.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Grammars\GoldDefinition.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Grammars\GoldGrammar.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\InternalExtensions.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\InverseParser.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\ISeparatedParser.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\ListParser.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Match.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\ParseArgs.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parser.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parser.operators.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\ParserChain.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\ParserChildrenArgs.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\ParserCloneArgs.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\ParserContainsArgs.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\ParserFindArgs.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\ParserInitializeArgs.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\AlternativeParser.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\AnyCharTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\AnySurrogatePairTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\BooleanTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\CharRangeTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\CharSetTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\CharTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\ControlTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\DigitTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\EmptyParser.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\EndParser.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\EolTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\ExceptParser.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\GroupParser.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\HexDigitTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\LetterOrDigitTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\LetterTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\LiteralTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\LookAheadParser.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\NumberParser.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\OptionalParser.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\PunctuationTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\RepeatCharTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\RepeatParser.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\SequenceParser.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\SingleCharTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\SingleLineWhiteSpaceTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\SingleSurrogatePairTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\StartParser.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\StringParser.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\SurrogatePairRangeTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\SurrogatePairTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\SymbolTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\TagParser.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\UntilParser.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Parsers\WhiteSpaceTerminal.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\ParserWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\ParserWriterArgs.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Scanner.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Scanners\StringScanner.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\SlimStack.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Terminals.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\TextParserWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\TextParserWriterArgs.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\UnaryParser.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\CodeParserWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Code\BooleanWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Code\CharRangeWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Code\CharSetWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Code\CharWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Code\ExceptWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Code\GrammarWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Code\GroupWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Code\InverseWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Code\ListWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Code\LiteralWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Code\NumberWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Code\ParserWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Code\RepeatWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Code\SequenceWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Code\SingleCharWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Code\StringWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Code\TagWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Code\UnaryWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\DisplayParserWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Display\ListWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Display\LiteralWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Display\ParserWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Display\RepeatWriter.cs" />
-    <Compile Include="Internals\AST\Base\ParserEngine\Writers\Display\UnaryWriter.cs" />
+    <Compile Include="Internals\ParserEngine\FluentExtensions.cs" />
+    <Compile Include="Internals\ParserEngine\Grammar.cs" />
+    <Compile Include="Internals\ParserEngine\GrammarMatch.cs" />
+    <Compile Include="Internals\ParserEngine\Grammars\BnfGrammar.cs" />
+    <Compile Include="Internals\ParserEngine\Grammars\EbnfGrammar.cs" />
+    <Compile Include="Internals\ParserEngine\Grammars\GoldDefinition.cs" />
+    <Compile Include="Internals\ParserEngine\Grammars\GoldGrammar.cs" />
+    <Compile Include="Internals\ParserEngine\InternalExtensions.cs" />
+    <Compile Include="Internals\ParserEngine\InverseParser.cs" />
+    <Compile Include="Internals\ParserEngine\ISeparatedParser.cs" />
+    <Compile Include="Internals\ParserEngine\ListParser.cs" />
+    <Compile Include="Internals\ParserEngine\Match.cs" />
+    <Compile Include="Internals\ParserEngine\ParseArgs.cs" />
+    <Compile Include="Internals\ParserEngine\Parser.cs" />
+    <Compile Include="Internals\ParserEngine\Parser.operators.cs" />
+    <Compile Include="Internals\ParserEngine\ParserChain.cs" />
+    <Compile Include="Internals\ParserEngine\ParserChildrenArgs.cs" />
+    <Compile Include="Internals\ParserEngine\ParserCloneArgs.cs" />
+    <Compile Include="Internals\ParserEngine\ParserContainsArgs.cs" />
+    <Compile Include="Internals\ParserEngine\ParserFindArgs.cs" />
+    <Compile Include="Internals\ParserEngine\ParserInitializeArgs.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\AlternativeParser.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\AnyCharTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\AnySurrogatePairTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\BooleanTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\CharRangeTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\CharSetTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\CharTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\ControlTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\DigitTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\EmptyParser.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\EndParser.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\EolTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\ExceptParser.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\GroupParser.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\HexDigitTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\LetterOrDigitTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\LetterTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\LiteralTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\LookAheadParser.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\NumberParser.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\OptionalParser.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\PunctuationTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\RepeatCharTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\RepeatParser.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\SequenceParser.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\SingleCharTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\SingleLineWhiteSpaceTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\SingleSurrogatePairTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\StartParser.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\StringParser.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\SurrogatePairRangeTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\SurrogatePairTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\SymbolTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\TagParser.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\UntilParser.cs" />
+    <Compile Include="Internals\ParserEngine\Parsers\WhiteSpaceTerminal.cs" />
+    <Compile Include="Internals\ParserEngine\ParserWriter.cs" />
+    <Compile Include="Internals\ParserEngine\ParserWriterArgs.cs" />
+    <Compile Include="Internals\ParserEngine\Scanner.cs" />
+    <Compile Include="Internals\ParserEngine\Scanners\StringScanner.cs" />
+    <Compile Include="Internals\ParserEngine\SlimStack.cs" />
+    <Compile Include="Internals\ParserEngine\Terminals.cs" />
+    <Compile Include="Internals\ParserEngine\TextParserWriter.cs" />
+    <Compile Include="Internals\ParserEngine\TextParserWriterArgs.cs" />
+    <Compile Include="Internals\ParserEngine\UnaryParser.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\CodeParserWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Code\BooleanWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Code\CharRangeWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Code\CharSetWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Code\CharWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Code\ExceptWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Code\GrammarWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Code\GroupWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Code\InverseWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Code\ListWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Code\LiteralWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Code\NumberWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Code\ParserWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Code\RepeatWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Code\SequenceWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Code\SingleCharWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Code\StringWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Code\TagWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Code\UnaryWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\DisplayParserWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Display\ListWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Display\LiteralWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Display\ParserWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Display\RepeatWriter.cs" />
+    <Compile Include="Internals\ParserEngine\Writers\Display\UnaryWriter.cs" />
     <Compile Include="Internals\AST\Node.cs" />
     <Compile Include="Internals\CBFFGrammar.cs" />
     <Compile Include="Internals\PatternParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Internals\AST\Base\ParserEngine\LICENSE" />
+    <None Include="Internals\ParserEngine\LICENSE" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

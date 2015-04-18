@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CBFF.Internals.AST
 {
+    [Serializable()] 
     public class ArrayNode : Base.IAst
     {
         public List<Base.IAst> Nodes { get; set; }

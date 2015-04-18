@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace CBFF.Internals.AST.Base
 {
-    public abstract class IAst
+    [Serializable()] 
+    public  class IAst
     {
         public string Name { get; set; }
+
     }
 }

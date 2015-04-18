@@ -5,10 +5,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Iku;
-using CBFF.Internals.AST;
 
+using CBFF.Internals.AST;
+using Newtonsoft.Json;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 namespace CBFF
 {
     public class CustomeBinaryFileWriter
@@ -132,43 +133,21 @@ namespace CBFF
 
         public void WriteFile(string path)
         {
-            using (BinaryWriter b = new BinaryWriter(new FileStream(path, FileMode.Create)))
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None);
+            formatter.Serialize(stream, ast);
+            stream.Close();
+
+            /*using (BinaryWriter b = new BinaryWriter(new FileStream(path, FileMode.Create)))
             {
-
-
-                    Node n = (Node)ast[0];
-
-                    Wloop((Node)n, b);
-                    
-                  
+                string output = JsonConvert.SerializeObject(ast);
+                var bytes = Encoding.UTF8.GetBytes(output);
+                var base64 = Convert.ToBase64String(bytes);
+                b.Write(base64);                 
                 
-            }
+            }*/
         }
-        private void Wloop(Node n, BinaryWriter b)
-        {
-            foreach (var item in n.Attributes)
-            {
-                b.Write((string)item.Type);
-                switch (item.Type)
-                {
-                    case "string":
-                        b.Write((string)item.Value);
-                        break;
-                    case "int":
-                        b.Write((int)item.Value);
-                        break;
-                    case "bool":
-                        b.Write((bool)item.Value);
-                        break;
-
-                }
-            }
-            foreach (var f in n.Nodes)
-            {
-                Wloop((Node)f, b);
-            }
-        }
-
-
+     
+     
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CBFF.Internals.AST
 {
+    [Serializable()] 
     public class Attribute : Base.IAst
     {
         public string Type { get; set; }
